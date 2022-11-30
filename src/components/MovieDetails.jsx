@@ -1,11 +1,13 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 const MovieDetails = () => {
   const params = useParams();
   console.log("PARAMS", params);
   console.log("Movie Id is", params.movieId);
+
+  const navigate = useNavigate();
 
   const [singleMovie, setSingleMovie] = useState([]);
 
@@ -35,7 +37,9 @@ const MovieDetails = () => {
       <Card.Body>
         <Card.Title>{singleMovie.Title}</Card.Title>
         <Card.Text>{singleMovie.Plot}</Card.Text>
-        {/* <Button variant="primary">Go somewhere</Button> */}
+        <Button variant="primary" onClick={() => navigate("/")}>
+          Go Back
+        </Button>
       </Card.Body>
     </Card>
   );
