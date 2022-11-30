@@ -105,3 +105,24 @@ body {
   margin-left: -130px !important;
   background-color: black !important;
 }
+
+.customMovieSection {
+  height: 300px;
+}
+
+.customMovieSection img {
+  height: 70%;
+}
+
+.customCard {
+  height: 500px;
+  width: 300px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.customCard img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}

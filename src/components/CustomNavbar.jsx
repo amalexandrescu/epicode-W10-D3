@@ -2,6 +2,7 @@ import { Navbar, Container, Nav, NavDropdown, Image } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import netflixLogo from "../assets/netflix_logo.png";
 import accountPhoto from "../assets/avatar.png";
+import { Link } from "react-router-dom";
 
 const CustomNavbar = () => {
   return (
@@ -18,8 +19,14 @@ const CustomNavbar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto mr-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">TV Shows</Nav.Link>
+            {/* <Nav.Link href="#">Home</Nav.Link> */}
+            <Link className="nav-link" to="/">
+              <div>Home</div>
+            </Link>
+            <Link className="nav-link" to="/tv-shows">
+              <div>TV Shows</div>
+            </Link>
+            {/* <Nav.Link href="#">TV Shows</Nav.Link> */}
             <Nav.Link href="#">Movies</Nav.Link>
             <Nav.Link href="#">Recently added</Nav.Link>
             <Nav.Link href="#">My List</Nav.Link>
