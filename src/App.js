@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Component } from "react";
+import CustomNavbar from "./components/CustomNavbar";
+import { Container } from "react-bootstrap";
+import ContentPresentation from "./components/ContentPresentation";
+import MovieGallery from "./components/MovieGallery";
+import MyFoter from "./components/MyFooter";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    movieTitiles: [
+      "harry+potter",
+      "pirates+of+the+caribbean",
+      "lord+of+the+rings",
+    ],
+  };
+
+  render() {
+    return (
+      <div>
+        <CustomNavbar />
+        <Container fluid>
+          <ContentPresentation />
+          <MovieGallery title="Trending Now" searchQuery="harry+potter" />
+          <MovieGallery
+            title="Watch It Again"
+            searchQuery="pirates+of+the+caribbean"
+          />
+          <MovieGallery title="New Releases" searchQuery="lord+of+the+rings" />
+        </Container>
+        <MyFoter />
+      </div>
+    );
+  }
 }
 
 export default App;
